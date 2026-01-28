@@ -1,2 +1,1 @@
-# Calculadora-de-IMC
-Calculadora de IMC usando ReactJS
+# Calculadora de IMC usando ReactJS
