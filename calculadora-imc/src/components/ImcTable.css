@@ -1,0 +1,9 @@
+#result-container {
+    text-align: center;
+    align-items: center;
+}
+
+#imc-number {
+    font-size: 2.4rem;
+    margin-bottom: .6rem;
+}

@@ -1,5 +1,5 @@
 import './App.css'
-import ImcCalc from './components/imcCalc'
+import ImcCalc from './components/ImcCalc'
 import ImcTable from './components/ImcTable'
 import './data/data'
 import { useState } from 'react'
@@ -7,7 +7,15 @@ import { useState } from 'react'
 function App() {
   const calcImc = (e, height, weight) => {
     e.preventDefault()
-    console.log("Executou")
+
+    if(!weight || !height) return
+
+    const weightFloat = +weight.replace(",", ".") 
+    const heightFloat = +height.replace(",", ".") 
+
+    const imcResult = (weightFloat / (heightFloat * heightFloat)).toFixed(1)
+
+    setImc(imcResult)
   }
 
   const [imc, setImc] = useState("")
@@ -16,11 +24,7 @@ function App() {
 
   return (
     <div className='container'>
-      {!imc ? (
-        <ImcCalc calcImc={calcImc}/>
-      ): (
-        <ImcTable/>
-      )}
+      {!imc ?(<ImcCalc calcImc={calcImc}/>): (<ImcTable data={data}/>)}
     </div>
   )
 }
