@@ -20,7 +20,7 @@ function App() {
 
   const [imc, setImc] = useState("")
   const [info, setInfo] = useState("")
-  const [infoClass, setInfoClass] = useState=("")
+  const [infoClass, setInfoClass] = useState("")
 
   return (
     <div className='container'>
